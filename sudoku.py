@@ -6,15 +6,26 @@ class sudokuCell:
         self.cands = set(range(1,10))
 
     def setValue(self, v):
-        assert v in self.cands
-        self.val = v
-        self.cands = set([v])
+        if self.val is None:
+            self.val = v
+            self.cands = set([v])
+            retval = 1
+        elif self.val == v:
+            retval = 0
+        else:
+            raise ValueError
+        return retval
 
     def removeCands(self, c):
-        pass
+        if c in self.cands:
+            self.cands.remove(c)
+            retval = 1
+        else:
+            retval = 0
+        return retval
 
-
-
+tests
+    
 
 if __name__ == '__main__':
     foo = sudokuCell()
