@@ -24,7 +24,7 @@ class sudokuCell:
             retval = 0
         return retval
 
-tests
+
     
 
 if __name__ == '__main__':
